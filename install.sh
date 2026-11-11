@@ -183,7 +183,10 @@ install_claude() {
   for d in "$REPO"/skills/*/; do d=${d%/}; link "$d" "$CLAUDE_DIR/skills/${d##*/}"; done
   ensure_dir "$CLAUDE_DIR/agents"
   ensure_dir "$CLAUDE_DIR/rules"
-  convert_for_claude || CONFLICTS=$((CONFLICTS + 1))
+  local out
+  out=$(convert_for_claude) || CONFLICTS=$((CONFLICTS + 1))
+  [[ -z "$out" ]] || printf '%s\n' "$out"
+  CHANGED=$((CHANGED + $(grep -cE '^(would )?write ' <<<"$out" || true)))
   merge_claude_hooks
 }
 
