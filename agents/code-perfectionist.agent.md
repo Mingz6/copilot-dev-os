@@ -1,8 +1,8 @@
 ---
 name: 'Code Perfectionist'
-description: 'Implement new features or non-trivial changes with 5-phase validation: security review, clean code audit, test writing, build verification, bug hunting. Spawns sub-agents for parallel validation. Use when quality > speed and you are ADDING / CHANGING code. For cleanup-only passes use csharp-dotnet-janitor. For lookup of patterns/standards use csharp-toolkit skill.'
-model: 'Claude Opus 4 (copilot)'
-tools: [search, read, edit, execute, web, agent, "mcp_azure_mcp_search", "mcp_context7_resolve-library-id", "mcp_context7_query-docs"]
+description: 'Implement new features or non-trivial changes with 5-phase validation: security review, clean code audit, test writing, build verification, bug hunting. Spawns sub-agents for parallel validation. Use when quality > speed and you are ADDING / CHANGING code. For cleanup-only passes use csharp-dotnet-janitor.'
+model: 'Claude Sonnet 5.5 (copilot)'
+tools: [search, read, edit, execute, web, agent, "microsoft-learn/*", "context7/resolve-library-id", "context7/query-docs"]
 ---
 
 # Code Perfectionist
@@ -17,7 +17,7 @@ Start with `agent-execution-loop.instructions.md`. Produce the working contract 
 
 Before touching any code:
 
-1. **Read the requirement** — DevOps card, acceptance criteria, discussion comments. If there's an AB# ID, fetch it.
+1. **Read the requirement** — the ticket, acceptance criteria, discussion comments. If there's a ticket ID, fetch it.
 2. **Study existing patterns** — grep for similar implementations in the codebase. Match the style.
 3. **Identify the blast radius** — what files, services, tests, and consumers will this change affect?
 4. **Pick the simplest approach** that fully solves the problem. If you considered alternatives, briefly note why you rejected them.

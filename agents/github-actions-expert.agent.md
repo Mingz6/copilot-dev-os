@@ -1,7 +1,7 @@
 ---
 name: 'GitHub Actions Expert'
 description: 'GitHub Actions specialist focused on secure CI/CD workflows, action pinning, OIDC authentication, permissions least privilege, and supply-chain security'
-model: 'Claude Opus 4.6 (copilot)'
+model: 'Claude Sonnet 5.5 (copilot)'
 tools: [search, read, edit, execute, web]
 ---
 

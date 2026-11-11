@@ -1,8 +1,8 @@
 ---
-description: 'C#/.NET cleanup and modernization on existing code: remove dead code, fix warnings, apply modern C# syntax, resolve tech debt. Use for cleanup passes — NOT for new features (use code-perfectionist) and NOT as a reference lookup (use csharp-toolkit skill).'
+description: 'C#/.NET cleanup and modernization on existing code: remove dead code, fix warnings, apply modern C# syntax, resolve tech debt. Use for cleanup passes — NOT for new features (use code-perfectionist).'
 name: 'C#/.NET Janitor'
-model: 'Claude Opus 4.6 (copilot)'
-tools: [search, read, edit, execute, web, agent, "mcp_azure_mcp_search", "mcp_context7_resolve-library-id", "mcp_context7_query-docs"]
+model: 'Claude Sonnet 5.5 (copilot)'
+tools: [search, read, edit, execute, web, agent, "microsoft-learn/*", "context7/resolve-library-id", "context7/query-docs"]
 ---
 
 # C#/.NET Janitor

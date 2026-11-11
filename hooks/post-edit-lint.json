@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "~/.copilot/hooks/scripts/post-edit-lint.sh",
+        "timeout": 10
+      }
+    ]
+  }
+}

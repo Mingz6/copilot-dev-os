@@ -5,7 +5,7 @@ applyTo: '**/*.py'
 
 ## Python Coding Standards
 
-Python 3.11+. Applies to FastAPI services, APScheduler workers, and Python MCP packages.
+Python 3.12+. Applies to FastAPI services, APScheduler workers and Python MCP packages.
 
 ### Type Hints
 
@@ -85,10 +85,3 @@ log.error("Failed to fetch %s: %s", url, e)
 - Secrets via `os.environ` — never hardcoded.
 - Add every new env var to `.env.example` in the same commit.
 - Fail fast if required vars are missing (`os.environ["KEY"]` raises immediately; `os.getenv("KEY", "")` hides missing vars).
-
-### Worker-center Specifics
-
-- `run(params, data_dir, reports_dir)` → return `{"alert": str, "title": str, "priority": "low|normal|high", "url": str}` or `None`.
-- `priority` must be `"low"`, `"normal"`, or `"high"` — never `"default"`.
-- State files: always write via `workers.io_utils.atomic_write_json` — never `path.write_text(json.dumps(...))`.
-- Workers must be idempotent: same inputs on retry = same result.
