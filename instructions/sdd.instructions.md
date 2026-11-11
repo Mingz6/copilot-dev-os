@@ -17,6 +17,8 @@ Write the spec before writing the code. Specs are cheap to change; code is not.
 
 If you're not sure, default to Working Contract. Upgrade to SDD when the work survives past one chat session.
 
+**Repo has `.specify/` (GitHub Spec Kit)?** Spec Kit owns `specs/`: use its `/speckit-*` commands and templates (`specs/NNN-slug/spec.md`, `plan.md`, `tasks.md`), not the single-file template below.
+
 ### The Three Phases
 
 #### 1. Specify — What and Why
@@ -24,7 +26,7 @@ If you're not sure, default to Working Contract. Upgrade to SDD when the work su
 Write `specs/{feature-slug}.md` in the project root. Cover:
 
 - **Goal**: one sentence — what's true when this is done
-- **Motivation**: why this matters (link work item if applicable)
+- **Motivation**: why this matters (link the ticket if there is one)
 - **Requirements**: numbered list of must-haves
 - **Non-goals**: what you're explicitly not doing
 - **Edge cases**: the things that break if you don't think about them
@@ -54,10 +56,10 @@ Add a `## Tasks` section or create `specs/{feature-slug}-tasks.md`. Each task sh
 
 ```markdown
 ## Tasks
-- [ ] Add table to database (DDL script)
-- [ ] Create `REGI.Notification.Service` with Dapper queries
+- [ ] Add `NotificationPreference` table to the database (DDL script)
+- [ ] Create `Notification.Service` with Dapper queries
 - [ ] Add `GetPreferences` / `UpdatePreferences` endpoints
-- [ ] Wire React hook in frontend app
+- [ ] Wire React hook in the web app
 - [ ] Add tests for edge cases (no prefs set, invalid channel)
 ```
 
@@ -75,7 +77,7 @@ SDD's "constitution" concept maps to the per-repo `copilot-instructions.md` file
 
 ### Spec File Template
 
-Use this structure for `specs/{feature-slug}.md`: Goal, Motivation, Requirements, Non-Goals, Edge Cases, Acceptance Criteria, Technical Plan, Tasks. Add `Card: AB#{id}`, `Status: draft|implementing|done`, `Date:` at the top.
+Use this structure for `specs/{feature-slug}.md`: Goal, Motivation, Requirements, Non-Goals, Edge Cases, Acceptance Criteria, Technical Plan, Tasks. Add `Ticket: {id}`, `Status: draft|implementing|done`, `Date:` at the top.
 
 ### ADRs — Companion to Specs
 
@@ -101,7 +103,6 @@ This pipeline ensures you never code something you haven't thought through, and 
 
 - Extends: `agent-execution-loop.instructions.md` (Working Contract = lightweight SDD)
 - Source: [GitHub Spec Kit](https://github.com/github/spec-kit) + [Microsoft Blog](https://developer.microsoft.com/blog/spec-driven-development-spec-kit)
-- Related: `think-deeper.instructions.md` (verify, don't assume — specs force upfront thinking)
-- Related: `agent-execution-loop.instructions.md` §Zero-Skip (spec → plan → tasks → implement — no skipping phases)
+- Related: `agent-execution-loop.instructions.md` HARD LAW 3 (every step runs: spec → plan → tasks → implement, no skipped phases)
 - Related: `context-glossary.instructions.md` (CONTEXT.md + ADR format)
 - Related: `/grill-me` skill (interrogation that feeds into spec writing)

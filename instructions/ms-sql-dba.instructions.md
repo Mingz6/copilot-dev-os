@@ -1,6 +1,6 @@
 ---
 applyTo: '**/*.sql'
-description: '**CRITICAL**: Read this file BEFORE writing or editing ANY .sql file. Contains mandatory DRY_RUN convention for data-modifying scripts, ASCII-only encoding rules, and schema verification requirements.'
+description: '**CRITICAL**: Read this file BEFORE writing or editing ANY .sql file. Contains mandatory DRY_RUN convention for data-modifying scripts, ASCII-only encoding rules, schema verification requirements.'
 ---
 
 # SQL File Standards
@@ -13,8 +13,8 @@ Configure database connection profiles in your local environment (see your proje
 - **Local**: Full CRUD. Always prefer local — scrubbed/restored prod data if available.
 - **Dev**: Full CRUD with user confirmation before writes.
 - **Test**: Read-only. Generate scripts for writes, ask user to run manually.
-- **Remote read replica**: Read-only. Use when local/dev data isn't sufficient.
-- **Production primary**: **NEVER connect.** No reads, no writes, no connections.
+- **Prod read replica**: Read-only. Use when local/dev data isn't sufficient.
+- **Prod primary**: **NEVER connect.** No reads, no writes, no connections.
 
 ## Schema Verification Before Generating SQL
 
