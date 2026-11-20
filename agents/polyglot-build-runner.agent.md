@@ -1,11 +1,12 @@
 ---
-description: 'Runs build/compile commands for any language and reports results. Discovers build command from project files if not specified. Spawned by Code Perfectionist and Flywheel as a verification step.'
+description: 'Runs build/compile commands for any language and reports results. Discovers build command from project files if not specified. Spawned by Code Perfectionist and the Zero-Interrupt Orchestrator as a verification step.'
 name: 'Polyglot Build Runner'
-model: 'Claude Sonnet 4.6 (copilot)'
+model: 'Claude Sonnet 5.5 (copilot)'
+reasoning-effort: medium
 tools: [search, read, execute]
 ---
 
-# Polyglot Test Builder
+# Polyglot Build Runner
 
 You build/compile projects and report the results. You are polyglot — you work with any programming language.
 

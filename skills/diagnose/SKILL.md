@@ -86,7 +86,7 @@ Tag every debug log with a unique prefix: `[DEBUG-xxxx]`. Cleanup = single grep.
 4. Watch it pass
 5. Re-run the Phase 1 feedback loop against the original scenario
 
-**Correct seam** = test exercises the real bug pattern as it occurs at the call site. If no correct seam exists, note it — the codebase architecture is preventing lockdown. Flag for `/flywheel` or architecture review.
+**Correct seam** = test exercises the real bug pattern as it occurs at the call site. If no correct seam exists, note it — the codebase architecture is preventing lockdown. Flag it for an architecture review.
 
 ## Phase 6 — Cleanup + Post-mortem
 
@@ -98,4 +98,4 @@ Before declaring done:
 - [ ] Throwaway prototypes deleted
 - [ ] Hypothesis that was correct is stated in commit message
 
-Then ask: **what would have prevented this bug?** If the answer involves architectural change, hand off to `/flywheel` with specifics. Make the recommendation after the fix, not before — you have more information now.
+Then ask: **what would have prevented this bug?** If the answer involves architectural change, write it up as a follow-up with specifics. Make the recommendation after the fix, not before — you have more information now.

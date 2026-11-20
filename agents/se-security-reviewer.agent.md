@@ -1,7 +1,8 @@
 ---
 name: 'SE: Security'
 description: 'Security-focused code review specialist with OWASP Top 10, Zero Trust, LLM security, and enterprise security standards'
-model: 'Claude Opus 4 (copilot)'
+model: 'Claude Opus 5.5 (copilot)'
+reasoning-effort: high
 tools: [search, read]
 ---
 

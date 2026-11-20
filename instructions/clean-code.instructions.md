@@ -56,6 +56,15 @@ const registrationDate = new Date();
 - Prefer creating new objects over mutating existing ones.
 - Use `Readonly<T>`, `ReadonlyArray<T>`, `Object.freeze()` at boundaries.
 
+## Poka-Yoke — Make Invalid States Unrepresentable
+
+Prevent bugs by construction, not by convention. If the type system can make a bad state impossible to express, that beats a runtime check or a comment saying "don't do this."
+
+- Model mutually exclusive states as a discriminated union, not a set of nullable/boolean flags that could contradict each other (`{status: 'loading'} | {status: 'error', message: string} | {status: 'ready', data: T}` instead of `{isLoading, error, data}` all independently settable).
+- Prefer parsing over validating: convert an unstructured input into a typed value once at the boundary, then pass the typed value everywhere else. Don't re-check the same invariant deep in the call stack.
+- Use non-nullable types and required fields by default. A field that's "usually there" should not be typed optional just to avoid fixing the one path that doesn't set it.
+- If a function only behaves correctly for a subset of its parameter's possible values, narrow the parameter type instead of adding a guard clause + comment.
+
 ## Error Handling
 
 - Include context in error messages — what operation failed and with what input.

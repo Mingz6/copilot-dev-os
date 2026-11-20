@@ -1,0 +1,18 @@
+// The instructions, agents and skills are exported from a private repo as prose for agents, with
+// long lines and loose spacing. Lint what breaks rendering or links; skip the purely cosmetic rules.
+{
+  "config": {
+    "default": true,
+    "MD013": false, // line length: prose files keep one paragraph per line
+    "MD022": false, // blank lines around headings
+    "MD026": false, // trailing punctuation in headings ("Phase 1:")
+    "MD030": false, // spaces after list markers
+    "MD031": false, // blank lines around fences
+    "MD032": false, // blank lines around lists
+    "MD040": false, // fenced code without a language
+    "MD041": false, // files that start with YAML frontmatter, not a heading
+    "MD060": false  // table column alignment
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**"]
+}
